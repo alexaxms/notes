@@ -37,11 +37,11 @@
 </div>
 <div class="row">
   <% @notes.each do |note| %>
-    <div class="card card-index">
+    <div class="card card-index" style="background-color: <%= note.backgroundcolor %>">
     <div class="card-body w-100">
       <h5 class="card-title"><%= note.title %></h5>
       <p class="card-text"><%= note.description %> </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="#" class="btn btn-dark">Go somewhere</a>
     </div>
     </div>
   <% end %>

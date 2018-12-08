@@ -10,5 +10,14 @@
   <%= @note.description %>
 </p>
 
+<p>
+  <strong>Begin:</strong>
+  <%= @note.begin.to_time %>
+</p>
+
+<p>
+  <strong>Falta para comenzar:</strong>
+  <%= time_ago_in_words(@note.begin) %>
+</p>
 <%= link_to 'Edit', edit_note_path(@note) %> |
 <%= link_to 'Back', notes_path %>

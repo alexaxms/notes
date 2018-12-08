@@ -6,6 +6,8 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :description %>
+    <%= f.input :begin, :input_html => { :value => DateTime.now.strftime("%d/%m/%Y - %H:%M %p")}, :as => :datetime %>
+    <%= f.input :end, :input_html => { :value => DateTime.now.strftime("%d/%m/%Y - %H:%M %p")}, :as => :datetime %>
   </div>
 
   <div class="form-actions">
