@@ -4,7 +4,9 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    Note.updatebgc
+    @current = Note.current
+    @notes = Note.where('begin >= :time_now', :time_now  => Time.now)
   end
 
   # GET /notes/1

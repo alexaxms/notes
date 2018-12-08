@@ -20,4 +20,5 @@
   <%= time_ago_in_words(@note.begin) %>
 </p>
 <%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Destroy', @note, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', notes_path %>
