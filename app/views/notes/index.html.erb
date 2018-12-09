@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Notas</h1>
+<h1><%= t(:notes) %></h1>
 <%= link_to '<button type="button" class="btn btn-primary">Nueva nota</button>'.html_safe, new_note_path %>
 <button class="btn btn-info" id="toogle">
   Mostrar filtros
@@ -51,7 +51,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= @current.title %></h5>
         <p class="card-text"><%= @current.description %> </p>
-        <%= link_to '<button type="button" class="btn btn-dark">Ver</button>'.html_safe, @current %>
+        <%= link_to '<button type="button" class="btn btn-dark">t(:show)</button>'.html_safe, @current %>
         <p>Termina en: <%= time_ago_in_words(@current.end) %></p>
       </div>
     </div>
@@ -62,11 +62,11 @@
     <div class="card-body w-100">
       <h5 class="card-title"><%= note.title %></h5>
       <p class="card-text"><%= note.description %> </p>
-      <%= link_to '<button type="button" class="btn btn-dark">Ver</button>'.html_safe, note %>
+      <%= button_to t(:show), note, :class => "btn btn-dark", :method => :get %>
       <% if  note.backgroundcolor != "darkgray"%>
         <p>Falta: <%= time_ago_in_words(note.begin) %></p>
       <% else %>
-        <p>Finalizado</p>
+        <p><%= t(:finished) %></p>
       <% end %>
     </div>
     </div>
