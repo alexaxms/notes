@@ -1,6 +1,6 @@
-<h1>Editing Note</h1>
+<h1><%=t(:edit_note)%></h1>
 
 <%= render 'form', note: @note %>
 
-<%= link_to 'Show', @note %> |
-<%= link_to 'Back', notes_path %>
+<%= link_to t(:show), @note %> |
+<%= link_to t(:back), notes_path %>

@@ -33,3 +33,6 @@ en:
   hello: "Hello world"
   show: "Show"
   notes: "Notes"
+  begins_at: "Begins at"
+  new_note: "New note"
+  edit_note: "Edit note"

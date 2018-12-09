@@ -1,0 +1,12 @@
+es:
+  simple_form:
+    labels:
+      note:
+        note: 'Nota'
+        title: 'Título'
+        description: 'Descripción'
+        begin: 'Comienzo'
+        end: 'Fin'
+        edit:
+          username: 'Change user name'
+          password: 'Change password'

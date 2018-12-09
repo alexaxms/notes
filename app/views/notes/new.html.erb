@@ -1,5 +1,5 @@
-<h1>Nueva Nota</h1>
+<h1><%= t(:new_note) %></h1>
 
 <%= render 'form', note: @note %>
 
-<%= link_to 'Atrás', notes_path %>
+<%= link_to t(:back), notes_path %>

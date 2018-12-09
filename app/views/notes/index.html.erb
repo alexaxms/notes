@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t(:notes) %></h1>
-<%= link_to '<button type="button" class="btn btn-primary">Nueva nota</button>'.html_safe, new_note_path %>
+<h1><%= t(:notes)%></h1>
+<%= button_to t(:new_note), new_note_path, :class => "btn btn-primary", :method => :get %>
 <button class="btn btn-info" id="toogle">
   Mostrar filtros
 </button>
@@ -51,7 +51,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= @current.title %></h5>
         <p class="card-text"><%= @current.description %> </p>
-        <%= link_to '<button type="button" class="btn btn-dark">t(:show)</button>'.html_safe, @current %>
+        <%= button_to t(:show), note, :class => "btn btn-dark", :method => :get %>
         <p>Termina en: <%= time_ago_in_words(@current.end) %></p>
       </div>
     </div>
@@ -72,6 +72,7 @@
     </div>
   <% end %>
 </div>
+<br><br>
 
 
 <script>

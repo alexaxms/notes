@@ -11,12 +11,17 @@
 </p>
 
 <p>
-  <strong>Begin:</strong>
+  <strong><%= t(:begin) %>:</strong>
   <%= @note.begin.to_time %>
 </p>
 
 <p>
-  <strong>Falta para comenzar:</strong>
+  <strong><%= t(:end) %>:</strong>
+  <%= @note.end.to_time %>
+</p>
+
+<p>
+  <strong><%= t(:begins_at) %>:</strong>
   <%= time_ago_in_words(@note.begin) %>
 </p>
 <%= link_to t(:edit), edit_note_path(@note) %> |
