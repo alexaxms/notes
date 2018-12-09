@@ -1,15 +1,23 @@
 class Note < ApplicationRecord
+  include Filterable
   after_create :setbackgroundcolor
+  ########################### SCOPE ############################
+  scope :title, -> (title) { where("title LIKE ?", "%#{title}%")}
+  scope :description, -> (description) { where("description LIKE ?", "%#{description}%")}
+  scope :created_min, -> (start_date) {where('created_at >= ?', start_date.to_date)}
+  scope :created_max, -> (end_date) {where('created_at <= ?', end_date.to_date)}
+  scope :begin_min, -> (start_date) {where('begin >= ?', start_date.to_date)}
+  scope :begin_max, -> (end_date) {where('begin <= ?', end_date.to_date)}
+
   def setbackgroundcolor
     case self.hoursleft
     when 0..1
-      puts "Queda menos de una hora"
       self.backgroundcolor = "lightcoral"
     when 1..24
-      puts "Queda menos de un día"
       self.backgroundcolor = "lightgreen"
+    when -999999..0
+      self.backgroundcolor = "darkgray"
     else
-      puts "it was something else"
       self.backgroundcolor = "lightskyblue"
     end
     self.save
