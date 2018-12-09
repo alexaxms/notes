@@ -30,12 +30,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  show: "Show"
-  notes: "Notes"
-  begins_at: "Begins at"
-  new_note: "New note"
-  edit_note: "Edit note"
+  hello: 'Hello world'
+  show: 'Show'
+  note: 'Note'
+  notes: 'Notes'
+  begins_at: 'Begins at'
+  new_note: 'New note'
+  edit_note: 'Edit note'
   title: 'Title'
   description: 'Description'
   filter: 'Filter'
@@ -48,3 +49,9 @@ en:
   note_created: 'Note created successfully'
   note_updated: 'Note updated successfully'
   note_deleted: 'Note deleted successfully'
+  finished: 'Finished'
+  edit: 'Edit'
+  delete: 'Delete'
+  back: 'Back'
+  begin: 'Begin'
+  end: 'End'

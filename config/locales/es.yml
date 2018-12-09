@@ -225,14 +225,14 @@ es:
     pm: pm
   page:
     index:
-      show: "Ver"
-  show: "Ver"
-  finished: "Finalizado"
-  note: "Nota"
-  notes: "Notas"
-  edit: "Editar"
-  delete: "Eliminar"
-  back: "Atrás"
+      show: 'Ver'
+  show: 'Ver'
+  finished: 'Finalizado'
+  note: 'Nota'
+  notes: 'Notas'
+  edit: 'Editar'
+  delete: 'Eliminar'
+  back: 'Atrás'
   title: 'Título'
   description: 'Descripción'
   begin: 'Comienzo'
