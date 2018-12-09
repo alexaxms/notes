@@ -5,9 +5,9 @@ class Note < ApplicationRecord
   scope :title, -> (title) { where("title LIKE ?", "%#{title}%")}
   scope :description, -> (description) { where("description LIKE ?", "%#{description}%")}
   scope :created_min, -> (start_date) {where('created_at >= ?', start_date.to_date)}
-  scope :created_max, -> (end_date) {where('created_at <= ?', end_date.to_date)}
+  scope :created_max, -> (end_date) {where('created_at <= ?', end_date.to_date + 1.day)}
   scope :begin_min, -> (start_date) {where('begin >= ?', start_date.to_date)}
-  scope :begin_max, -> (end_date) {where('begin <= ?', end_date.to_date)}
+  scope :begin_max, -> (end_date) {where('begin <= ?', end_date.to_date + 1.day)}
 
   def setbackgroundcolor
     case self.hoursleft

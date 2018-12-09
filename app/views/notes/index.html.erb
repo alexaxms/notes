@@ -3,28 +3,28 @@
 <h1><%= t(:notes)%></h1>
 <%= button_to t(:new_note), new_note_path, :class => "btn btn-primary", :method => :get %>
 <button class="btn btn-info" id="toogle">
-  Mostrar filtros
+  <%= t(:filters)%>
 </button>
 <%= form_tag notes_path, method: 'get' do%>
   <div id="filters" style="display: none;">
   <div class="row">
     <div class="col-md-2">
-      <%=label_tag 'title', 'Título' %>
+      <%=label_tag t(:title) %>
       <%=text_field_tag("title", value = nil, options = {class: "form-control input-height"}) %>
     </div>
     <div class="col-md-2">
-      <%=label_tag "Descripción "%>
+      <%=label_tag t(:description)%>
       <%=text_field_tag("description", value = nil, options = {class: "form-control input-height"}) %>
     </div>
-    <div class="col-md-2">
-      <%=label_tag "Fecha de creación"%>
-      Inicio: <%=date_field_tag("created_min", value = nil, options = {class: "form-control input-height"}) %>
-      Fin: <%=date_field_tag("created_max", value = nil, options = {class: "form-control input-height"}) %>
+    <div class="col-md-3">
+      <%=label_tag t(:creation_date)%><br>
+      <%=t(:begin)%>: <%=date_field_tag("created_min", value = nil, options = {class: "form-control input-height"}) %>
+      <%=t(:end)%>: <%=date_field_tag("created_max", value = nil, options = {class: "form-control input-height"}) %>
     </div>
-    <div class="col-md-2">
-      <%=label_tag "Fecha de recordatorio"%>
-      Inicio: <%=date_field_tag("begin_min", value = nil, options = {class: "form-control input-height"}) %>
-      Fin: <%=date_field_tag("begin_max", value = nil, options = {class: "form-control input-height"}) %>
+    <div class="col-md-3">
+      <%=label_tag t(:remeber_date)%><br>
+      <%=t(:begin)%>: <%=date_field_tag("begin_min", value = nil, options = {class: "form-control input-height"}) %>
+      <%=t(:end)%>: <%=date_field_tag("begin_max", value = nil, options = {class: "form-control input-height"}) %>
     </div>
   </div>
   <!-- /.row -->
@@ -32,10 +32,10 @@
     <div class="col-md-12">
       <div class=" botones">
         <%=button_tag(type: "submit",class: "btn btn-info") do%>
-          <%= fa_icon 'filter', text:'Filtrar'%>
+          <%= fa_icon 'filter', text:t(:filter)%>
         <%end%>
         <%= link_to notes_path,class: "btn btn-light" do%>
-          <%= fa_icon 'trash-o', text: 'Limpiar' %>
+          <%= fa_icon 'trash-o', text:t(:clean) %>
         <%end%>
       </div>
     </div>
@@ -78,14 +78,10 @@
 <script>
     $("#toogle").click(function() {
 
-        var lable = $("#toogle").text().trim();
-
-        if(lable == "Mostrar filtros") {
-            $("#toogle").text("Ocultar filtros");
+        if($('#filters').is(':hidden')) {
             $("#filters").show();
         }
         else {
-            $("#toogle").text("Mostrar filtros");
             $("#filters").hide();
         }
 

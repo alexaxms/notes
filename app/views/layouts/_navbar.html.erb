@@ -6,12 +6,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+ <!--     <li class="nav-item active">
         <a class="nav-link" href="#">Notas históricas <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
-
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,10 +23,19 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <%= render "layouts/navigation_link" %>
+      <%#= render "layouts/navigation_link" %>-->
     </ul>
     <form class="form-inline my-2 my-lg-0">
+        <div class='dropdown'>
+          <button aria-expanded='false' aria-haspopup='true' class='btn btn-outline-dark dropdown-toggle' data-toggle='dropdown' type='button'>
+            <i class='fa fa-globe'></i>
+            <span class='caret'></span>
+          </button>
+          <div aria-labelledby='dropdownMenu2' class='dropdown-menu toLeft'>
+            <%= render "layouts/navigation_link" %>
+          </div>
+        </div>
 
-    </form>
+  </form>
   </div>
 </nav>
