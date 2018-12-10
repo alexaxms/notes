@@ -46,7 +46,7 @@
 <% if @current!=nil%>
     <div class="card" style="background-color: <%= @current.backgroundcolor %>">
       <div class="card-header">
-        <h3>En curso</h3>
+        <h3><%= t(:current) %></h3>
       </div>
       <div class="card-body">
         <h5 class="card-title"><%= @current.title %></h5>

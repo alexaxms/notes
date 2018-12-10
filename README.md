@@ -61,9 +61,7 @@ If a note is running in the current time it will be displayed with a ![#ffff7f](
  
 ## Authors
 
-* **Alex Muñoz** - *Initial work* - [alexaxms](https://github.com/alexaxms)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Alex Muñoz** - [alexaxms](https://github.com/alexaxms)
 
 ## License
 
