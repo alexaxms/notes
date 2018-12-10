@@ -16,19 +16,21 @@ class Note < ApplicationRecord
   scope :begin_max, -> (end_date) {where('begin <= ?', end_date.to_date + 1.day)}
 
   def setbackgroundcolor
-    case self.hoursleft
-    when 0..1
-      self.backgroundcolor = "lightcoral"
-    when 1..24
-      self.backgroundcolor = "lightgreen"
-    when -1..0
+    if self.current
       self.backgroundcolor = "#ffff7f"
-    when -999999..-1
-      self.backgroundcolor = "darkgray"
-    else
-      self.backgroundcolor = "lightskyblue"
-    end
-    self.save
+    else  
+      case self.hoursleft
+      when 0..1
+        self.backgroundcolor = "lightcoral"
+      when 1..24
+        self.backgroundcolor = "lightgreen"
+      when -999999..-0
+        self.backgroundcolor = "darkgray"
+      else
+        self.backgroundcolor = "lightskyblue"
+      end
+    end 
+    self.save 
   end
 
   def hoursleft
@@ -53,7 +55,7 @@ class Note < ApplicationRecord
   end
 
   def current
-    if(self.backgroundcolor=='#ffff7f')
+    if(self.begin.to_time<Time.now && self.end.to_time>Time.now)
       return true
     else
       return false
