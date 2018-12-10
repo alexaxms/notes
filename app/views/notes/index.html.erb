@@ -52,7 +52,7 @@
         <h5 class="card-title"><%= @current.title %></h5>
         <p class="card-text"><%= @current.description %> </p>
         <%= button_to t(:show), @current, :class => "btn btn-dark", :method => :get %>
-        <p><%= t(:finish_in) %>: <%= time_ago_in_words(@current.end) %></p>
+        <p><%= t(:finish_in) %>  <%= time_ago_in_words(@current.end) %></p>
       </div>
     </div>
 <% end %>
