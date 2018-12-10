@@ -30,6 +30,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    errors:
+      messages:
+        default_message: 'Please fix the following problems:' 
+        record_invalid: "Validation failed: %{errors}"
+        date_error: 'must be after begin'
+    models:
+      note: 'Note'
+    attributes:
+      note:
+        title: 'Title'
+        description: 'Description'
+        begin: 'Begin'
+        end: 'End'
   errors: &errors
     messages:
       date_error: 'must be after begin'
