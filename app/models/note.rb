@@ -4,6 +4,7 @@ class Note < ApplicationRecord
   ########################### Validations ############################
   validates :title, presence: true
   validates :description, presence: true
+  validate :end_after_begin?
   ########################### SCOPE ############################
   scope :title, -> (title) { where("title LIKE ?", "%#{title}%")}
   scope :description, -> (description) { where("description LIKE ?", "%#{description}%")}
@@ -64,6 +65,12 @@ class Note < ApplicationRecord
       return true
     else
       return false
+    end
+  end
+
+  def end_after_begin?
+    if self.end < self.begin
+      errors.add :end, :date_error
     end
   end
 end

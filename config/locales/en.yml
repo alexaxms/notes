@@ -30,6 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  errors: &errors
+    messages:
+      date_error: 'must be after begin'
+  models:
+    note: 'Note'
+    attributes:
+      note:
+        title: 'Title'
+        description: 'Description'
+        begin: 'Begin'
+        end: 'End'
   hello: 'Hello world'
   show: 'Show'
   note: 'Note'

@@ -3,6 +3,7 @@ es:
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
+        date_error: 'debe ser después de comienzo'
         restrict_dependent_destroy:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
@@ -12,7 +13,8 @@ es:
       note:
         title: 'Título'
         description: 'Descripción'
-
+        begin: 'Comienzo'
+        end: 'Fin'
   date:
     abbr_day_names:
     - dom
