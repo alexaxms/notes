@@ -6,7 +6,8 @@ class NotesController < ApplicationController
   def index
     Note.updatebgc
     @current = Note.current
-    @notes = Note.filter(params.slice(:title, :description, :created_min, :created_max, :begin_min, :begin_max)).order('id DESC')
+    @notes = Note.filter(params.slice(:title, :description, :created_min,
+                                      :created_max, :begin_min, :begin_max)).order('id DESC')
   end
 
   # GET /notes/1

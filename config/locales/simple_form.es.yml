@@ -7,6 +7,5 @@ es:
         description: 'Descripción'
         begin: 'Comienzo'
         end: 'Fin'
-        edit:
-          username: 'Change user name'
-          password: 'Change password'
+    error_notification:
+      default_message: 'Por favor revise los problemas.'

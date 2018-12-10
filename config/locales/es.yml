@@ -8,10 +8,10 @@ es:
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
     models:
       note: 'Nota'
-      attributes:
-        note:
-          title: 'Título'
-          description: 'Descripción'
+    attributes:
+      note:
+        title: 'Título'
+        description: 'Descripción'
 
   date:
     abbr_day_names:
@@ -250,3 +250,4 @@ es:
   note_created: 'Nota creada con éxito'
   note_updated: 'Nota editada con éxito'
   note_deleted: 'Nota eliminada con éxito'
+  finished_at: 'Terminó hace'

@@ -22,11 +22,18 @@
   <strong><%= t(:end) %>:</strong>
   <%= @note.end.to_time %>
 </p>
+<% if @note.finished %>
+      <p>
+        <strong><%= t(:finished_at) %>:</strong>
+        <%= time_ago_in_words(@note.end) %>
+      </p>
+<% else %>
+      <p>
+        <strong><%= t(:begins_at) %>:</strong>
+        <%= time_ago_in_words(@note.begin) %>
+      </p>
+<% end %>
 
-<p>
-  <strong><%= t(:begins_at) %>:</strong>
-  <%= time_ago_in_words(@note.begin) %>
-</p>
 <%= link_to t(:edit), edit_note_path(@note) %> |
 <%= link_to t(:delete), @note, method: :delete, data: { confirm: t(:are_u_sure) } %> |
 <%= link_to t(:back), notes_path %>

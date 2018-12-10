@@ -1,6 +1,9 @@
 class Note < ApplicationRecord
   include Filterable
   after_create :setbackgroundcolor
+  ########################### Validations ############################
+  validates :title, presence: true
+  validates :description, presence: true
   ########################### SCOPE ############################
   scope :title, -> (title) { where("title LIKE ?", "%#{title}%")}
   scope :description, -> (description) { where("description LIKE ?", "%#{description}%")}
@@ -42,5 +45,13 @@ class Note < ApplicationRecord
       end
     end
     return nil
+  end
+
+  def finished
+    if(self.hoursleft<0)
+      return true
+    else
+      return false
+    end
   end
 end
