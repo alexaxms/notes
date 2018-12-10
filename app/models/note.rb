@@ -8,8 +8,10 @@ class Note < ApplicationRecord
   scope :title, -> (title) { where("title LIKE ?", "%#{title}%")}
   scope :description, -> (description) { where("description LIKE ?", "%#{description}%")}
   scope :created_min, -> (start_date) {where('created_at >= ?', start_date.to_date)}
+  # +1 Day do the trick for this, to_date method take 00:00 as default time
   scope :created_max, -> (end_date) {where('created_at <= ?', end_date.to_date + 1.day)}
   scope :begin_min, -> (start_date) {where('begin >= ?', start_date.to_date)}
+  # +1 Day do the trick for this, to_date method take 00:00 as default time
   scope :begin_max, -> (end_date) {where('begin <= ?', end_date.to_date + 1.day)}
 
   def setbackgroundcolor
@@ -30,7 +32,7 @@ class Note < ApplicationRecord
     (self.begin.to_time-Time.now).to_i/3600.0
   end
 
-  def self.updatebgc
+  def self.updatebgc #Update all notes background color
     @notes = Note.all
     @notes.each do |note|
       note.setbackgroundcolor
