@@ -44,7 +44,7 @@
 <%end%>
 <br>
 <% if @current!=nil%>
-    <div class="card" style="background-color: #ffff7f;">
+    <div class="card" style="background-color: <%= @current.backgroundcolor %>">
       <div class="card-header">
         <h3>En curso</h3>
       </div>
@@ -52,7 +52,7 @@
         <h5 class="card-title"><%= @current.title %></h5>
         <p class="card-text"><%= @current.description %> </p>
         <%= button_to t(:show), @current, :class => "btn btn-dark", :method => :get %>
-        <p>Termina en: <%= time_ago_in_words(@current.end) %></p>
+        <p><%= t(:finish_in) %>: <%= time_ago_in_words(@current.end) %></p>
       </div>
     </div>
 <% end %>
@@ -64,7 +64,11 @@
       <p class="card-text"><%= note.description %> </p>
       <%= button_to t(:show), note, :class => "btn btn-dark", :method => :get %>
       <% if  note.backgroundcolor != "darkgray"%>
-        <p>Falta: <%= time_ago_in_words(note.begin) %></p>
+        <% if note.current %>
+          <p><%= t(:finish_in) %>  <%= time_ago_in_words(note.end) %></p>
+        <% else %>
+          <p><%= t(:begins_at) %>  <%= time_ago_in_words(note.begin) %></p>
+        <% end %>
       <% else %>
         <p><%= t(:finished) %></p>
       <% end %>

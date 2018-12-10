@@ -56,3 +56,4 @@ en:
   begin: 'Begin'
   end: 'End'
   finished_at: 'Finished at'
+  finish_in: 'Finish in'

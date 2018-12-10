@@ -23,10 +23,16 @@
   <%= @note.end.to_time %>
 </p>
 <% if @note.finished %>
-      <p>
-        <strong><%= t(:finished_at) %>:</strong>
-        <%= time_ago_in_words(@note.end) %>
-      </p>
+      <% if @note.current %>
+        <p><strong><%= t(:finish_in) %>:</strong>
+          <%= time_ago_in_words(@note.end) %>
+        </p>
+      <% else %>
+        <p>
+          <strong><%= t(:finished_at) %>:</strong>
+          <%= time_ago_in_words(@note.end) %>
+        </p>
+      <% end %>
 <% else %>
       <p>
         <strong><%= t(:begins_at) %>:</strong>

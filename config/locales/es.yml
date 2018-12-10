@@ -251,3 +251,4 @@ es:
   note_updated: 'Nota editada con éxito'
   note_deleted: 'Nota eliminada con éxito'
   finished_at: 'Terminó hace'
+  finish_in: 'Termina en'

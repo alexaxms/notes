@@ -20,7 +20,9 @@ class Note < ApplicationRecord
       self.backgroundcolor = "lightcoral"
     when 1..24
       self.backgroundcolor = "lightgreen"
-    when -999999..0
+    when -1..0
+      self.backgroundcolor = "#ffff7f"
+    when -999999..-1
       self.backgroundcolor = "darkgray"
     else
       self.backgroundcolor = "lightskyblue"
@@ -47,6 +49,14 @@ class Note < ApplicationRecord
       end
     end
     return nil
+  end
+
+  def current
+    if(self.backgroundcolor=='#ffff7f')
+      return true
+    else
+      return false
+    end
   end
 
   def finished
