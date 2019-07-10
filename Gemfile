@@ -66,7 +66,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'simple_form'
 gem 'bootstrap-modal-rails'
-gem 'bootstrap', '~> 4.1.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'sprockets', '~> 3.7.2'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
